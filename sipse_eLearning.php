@@ -6,7 +6,7 @@ $app_config = array (
 	'dev_id' => 19526,								// Your DevCentral developer ID goes here
 	'app_id' => 6773,								// Your DevCentral application ID goes here
 	'app_name' => 'Binu Dev Test',				// Your application name goes here
-	'app_home' => 'http://mzpdesigns.com/Stuff/BiNu/SIPSE/TestBinuClass/helloworld.php',	// Publically accessible URI
+	'app_home' => 'http://mzpdesigns.com/Stuff/BiNu/SIPSE/TestBinuClass/sipse_eLearning.php',	// Publically accessible URI
 	'ttl' => 1										// Your page "time to live" parameter here
 );
 
