@@ -22,17 +22,42 @@ try {
 		$binu_app->time_to_live = 1;
 	}
 	*/ 
-	//MZP 1-10-14 2:27PM
-	//  This is where you can add content, I will be developing a IF/THEN structure to guide app navigation and condense all XMLs into 1 page
+	//MZP 1-11-14 2:23PM
+	//  The initial structure for the IF/ELSEIF navigation, currently unable to utilize list items so navigation is conducted through Menu options
 	
+
+	if ( ! isset($_GET['a']) )             {
+		$binu_app->add_text('This is the main screen', 'body_text'); 
+		}
+elseif ( $_GET['a'] == '1c'  )
+{ 
+$binu_app->add_text('This is the content page', 'body_text');   
+}
+elseif ( $_GET['a'] == '1r'  )
+{ 
+$binu_app->add_text('This is the review page', 'body_text');   
+}
+elseif ( $_GET['a'] == '1s'  )
+{ 
+$binu_app->add_text('This is the survey page', 'body_text');   
+}
+else { 
+  error_log('gsearch: unknown action: ' . $_GET['a']);
+  //start_page(); 
+}
+	
+	
+	/*
 	$binu_app->add_style( array('name' => 'body_text', 'color' => '#1540eb') );
 	$binu_app->add_text('Hello world', 'body_text');
 	$binu_app->add_text('Module 1 – Applying ICT to Support Didactic Teaching in Science, Technology, English and Mathematics (STEM) subject teaching', 'body_text');
-	$binu_app->add_text('By the end of this module you will be able to:', 'body_text');  
-$binu_app->add_text('•	Describe how didactic teaching with ICT can be used to support students’ acquisition of STEM subject matter knowledge.', 'body_text');
-$binu_app->add_text('•	Integrate appropriate ICT activities into your lesson plans so as to support students’ acquisition of STEM subject matter knowledge.', 'body_text');
+	*/
+	//$binu_app->add_list_item("listing1", "simple", "text", "Module 1 survey","http://mzpdesigns.com/Stuff/BiNu/SIPSE/TestBinuClass/helloworld.php", );
 
 	/* Process menu options */
+	$binu_app->add_menu_item( '1', 'Module 1 Content', $binu_app->application_URL . '?a=1c' );
+	$binu_app->add_menu_item( '2', 'Module 1 Review', $binu_app->application_URL . '?a=1r' );
+	$binu_app->add_menu_item( '3', 'Module 1 Survey', $binu_app->application_URL . '?a=1s' );
 	$binu_app->add_menu_item( '8', 'My App Home', $binu_app->application_URL  );
 	$binu_app->add_menu_item( '9', 'biNu Home', 'http://apps.binu.net/apps/mybinu/index.php' );
 
